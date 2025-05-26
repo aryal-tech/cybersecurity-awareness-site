@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta name="description" content="CyberShield is a cybersecurity awareness website providing safety tips, info on cyber threats, and interactive learning.">
+<meta name="keywords" content="cybersecurity, online safety, phishing, malware, internet security, cyber awareness">
+<meta name="author" content="Utsab Aryal">
+  <title>Contact Us | CyberShield</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contact-container {
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact-container form {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-container label {
+      margin-top: 10px;
+    }
+    .contact-container input,
+    .contact-container textarea {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+    .contact-container button {
+      margin-top: 20px;
+      padding: 10px;
+      background: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    #messageBox {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CyberShield</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="threats.html">Threats</a></li>
+        <li><a href="tips.html">Safety Tips</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" required />
+
+      <label for="message">Your Message</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="messageBox"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CyberShield | Protecting You Online</p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("messageBox").textContent = "Thank you for contacting us! We’ll get back to you soon.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta name="description" content="CyberShield is a cybersecurity awareness website providing safety tips, info on cyber threats, and interactive learning.">
+<meta name="keywords" content="cybersecurity, online safety, phishing, malware, internet security, cyber awareness">
+<meta name="author" content="Utsab Aryal">
+  <title>Cyber Quiz | CyberShield</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .quiz-container {
+      padding: 40px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CyberShield</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="threats.html">Threats</a></li>
+        <li><a href="tips.html">Safety Tips</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="quiz-container">
+    <h2>Cybersecurity Awareness Quiz</h2>
+
+    <div class="question" id="q1">
+      <h3>1. What is phishing?</h3>
+      <input type="radio" name="q1" value="a"> A method to catch fish online<br/>
+      <input type="radio" name="q1" value="b"> A cyberattack that tricks users into revealing personal info<br/>
+      <input type="radio" name="q1" value="c"> A software update<br/>
+    </div>
+
+    <div class="question" id="q2">
+      <h3>2. What is a strong password?</h3>
+      <input type="radio" name="q2" value="a"> Your pet's name<br/>
+      <input type="radio" name="q2" value="b"> "123456"<br/>
+      <input type="radio" name="q2" value="c"> A mix of letters, numbers, and symbols<br/>
+    </div>
+
+    <div class="question" id="q3">
+      <h3>3. What should you do if you receive a suspicious email?</h3>
+      <input type="radio" name="q3" value="a"> Click it to check what's inside<br/>
+      <input type="radio" name="q3" value="b"> Report it and delete it<br/>
+      <input type="radio" name="q3" value="c"> Forward it to friends<br/>
+    </div>
+
+    <button onclick="checkAnswers()">Submit Quiz</button>
+    <div class="result" id="result"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CyberShield | Protecting You Online</p>
+  </footer>
+
+  <script>
+    function checkAnswers() {
+      let score = 0;
+      if (document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+      if (document.querySelector('input[name="q2"]:checked')?.value === "c") score++;
+      if (document.querySelector('input[name="q3"]:checked')?.value === "b") score++;
+
+      document.getElementById("result").textContent = `Your Score: ${score}/3`;
+    }
+  </script>
+</body>
+</html>
